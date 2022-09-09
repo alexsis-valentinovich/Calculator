@@ -1,0 +1,68 @@
+﻿<Window x:Class="calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:calculator"
+        mc:Ignorable="d"
+ Title="MainWindow" Height="450" Width="350">
+    <Grid Background="#FFBDC5BD">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" MinHeight="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height=".45*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+            <TextBox x:Name="Decision" Height="35"  BorderBrush="Black" BorderThickness="3" FontSize="15" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Separator/>
+            <TextBox x:Name="Expression"  Height="45" BorderBrush="Black" BorderThickness="3" FontSize="20" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        <Button Content="C" Grid.Column="0" Grid.Row="1" Margin="3" FontSize="20" Click="Button_Click_18"/>
+        <Button Content="←" Grid.Column="1" Grid.Row="1" Margin="3" FontSize="20" Click="Button_Click_17"/>
+        <Button Content="(" Grid.Column="2" Grid.Row="1" Margin="3" FontSize="20" Click="Button_Click_14"/>
+        <Button Content=")" Grid.Column="3" Grid.Row="1" Margin="3" FontSize="20" Click="Button_Click_15"/>
+        <Button Content="/" Grid.Column="3" Grid.Row="2" Margin="3" FontSize="20" Click="Button_Click_13"/>
+        <Button Content="7" Grid.Column="0" Grid.Row="2" Margin="3" FontSize="20" Click="Button_Click_6"/>
+        <Button Content="8" Grid.Column="1" Grid.Row="2" Margin="3" FontSize="20" Click="Button_Click_7"/>
+        <Button Content="9" Grid.Column="2" Grid.Row="2" Margin="3" FontSize="20" Click="Button_Click_8"/>
+        <Button Content="*" Grid.Column="3" Grid.Row="3" Margin="3" FontSize="20" Click="Button_Click_12"/>
+        <Button Content="4" Grid.Column="0" Grid.Row="3" Margin="3" FontSize="20" Click="Button_Click_3"/>
+        <Button Content="5" Grid.Column="1" Grid.Row="3" Margin="3" FontSize="20" Click="Button_Click_4"/>
+        <Button Content="6" Grid.Column="2" Grid.Row="3" Margin="3" FontSize="20" Click="Button_Click_5"/>
+        <Button Content="-" Grid.Column="3" Grid.Row="4" Margin="3" FontSize="20" Click="Button_Click_11"/>
+        <Button Content="1" Grid.Column="0" Grid.Row="4" Margin="3" FontSize="20" Click="Button_Click"/>
+        <Button Content="2" Grid.Column="1" Grid.Row="4" Margin="3" FontSize="20" Click="Button_Click_1"/>
+        <Button Content="3" Grid.Column="2" Grid.Row="4" Margin="3" FontSize="20" Click="Button_Click_2"/>
+        <Button Content="+" Grid.Column="3" Grid.Row="5" Margin="3" FontSize="20" Click="Button_Click_10"/>
+        <Button Content="0" Grid.Column="0" Grid.Row="5" Margin="3" FontSize="20" Click="Button_Click_9"/>
+        <Button Content="," Grid.Column="1" Grid.Row="5" Margin="3" FontSize="20" Click="Button_Click_19"/>
+        <Button Content="=" Grid.Column="2" Grid.Row="5" Margin="3" FontSize="20" Click="Button_Click_16"/>
+        <Button Content="Help" Grid.Column="0" Grid.Row="6" Margin="3" FontSize="10" Click="Button_Click_20"/>
+        <Button Content="Выход" Grid.Column="1" Grid.Row="6" Margin="3" FontSize="10" Click="Button_Click_21"/>
+        <Popup x:Name="popup_Help"  StaysOpen="False" Placement="MousePoint"  Width="Auto" AllowsTransparency="True"  Opacity="0.8" PopupAnimation="Scroll">
+            <Border BorderBrush="Black" BorderThickness="2" Background="White">
+                <TextBlock TextWrapping="Wrap" Width="380" Margin="10"  FontSize="15">
+                    Ввод расчетных данных осуществляется, как в текстовом редакторе.
+                    Для расчета получаем строку с арифметическим выражением.
+                    Допускается вводить следующие знаки:  +,  -,  *,  /,  ( , ),  дробные
+                    десятичные цифры. Воспринимаются так же отрицательные числа. Пример 
+                    арифмитеческого выражения:9+5-4*2*(5-6)/2. Клавиша "←" удаление последнего
+                    символа. Клавиша "С" очистка всего поля. Ввод данных 
+                    с клавиатуры калькулятора осуществляется последовательно. В случае, если
+                    требуется корректировать символы внутри выражения, следует использовать 
+                    клавиатуру компьютера и манипулятор типа "мышь".
+                </TextBlock>
+            </Border>
+        </Popup>
+    </Grid>
+</Window>
